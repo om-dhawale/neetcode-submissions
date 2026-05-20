@@ -1,0 +1,19 @@
+class Solution {
+    /**
+     * @param {string} word1
+     * @param {string} word2
+     * @return {string}
+     */
+    mergeAlternately(word1, word2) {
+        let i = 0;
+        let j = 0;
+        let result = [];
+
+        while(i < word1.length && j < word2.length){
+            result.push(word1[i++], word2[j++]);
+        }
+        result.push(word1.slice(i));
+        result.push(word2.slice(j));
+        return result.join('');
+    }
+}
